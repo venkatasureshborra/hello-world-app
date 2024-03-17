@@ -25,7 +25,6 @@ jobs:
         run: |
           npm install
           npm run build --prod
-        working-directory: .
           
 
       - name: Zip artifact for deployment
@@ -58,5 +57,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'poc-06-angular-app'
-          package: ./dist/hello-world-app
+          package: .
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_08651CF3BA314A318DE3C32AB813EBD5 }}
